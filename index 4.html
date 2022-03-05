@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge two arrays and remove duplicate items</title>
+</head>
+<body>
+    <h3>This is a page where we merge two arrays and remove duplicate items</h3>
+    <script>
+        function merge_array(array1, array2) {
+    var result_array = [];
+    var arr = array1.concat(array2);
+    var len = arr.length;
+    var assoc = {};
+
+    while(len--) {
+        var item = arr[len];
+
+        if(!assoc[item]) 
+        { 
+            result_array.unshift(item);
+            assoc[item] = true;
+        }
+    }
+
+    return result_array;
+}
+
+
+var array1 = [1, 2, 3];
+
+var array2 = [2, 30, 1];
+
+console.log(merge_array(array1, array2));
+    </script>
+</body>
+</html> 
